@@ -1,6 +1,6 @@
 {
   "name": "@justinc/sequence",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Similar to Ramda's sequence (as a micro lib)",
   "main": "lib/index.js",
   "scripts": {
