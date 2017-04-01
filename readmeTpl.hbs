@@ -4,6 +4,16 @@ This package exports a function similar to [Ramda's sequence](http://ramdajs.com
 
 Note that it is strictly curried (see demo usage below).
 
+## Known issue
+
+For this package to work, the `Applicative` (see below) ADT value you use must have the following sematics for the `.ap` method: `fnApplicative.ap(valueApplicative)`. This is [Fantasy Land pre-v1.0.0 semantics](https://github.com/fantasyland/fantasy-land/releases/tag/v1.0.0).
+
+[Folktale 2](https://github.com/origamitower/folktale)'s Applicative ADTs have this behaviour for their `.ap` method (and support v1.0.0+ semantics of `.ap` via `valueApplicative['fantasy-land/ap'](fnApplicative)`).
+
+`sequence` uses the `.ap` method. This means `sequence` will work with Folktale 2 ADTs (as well as Folktale 1 mico-libs like [data.maybe](https://github.com/folktale/data.maybe) etc…).
+
+In the future, it is likely that a major version update of this package will take a config Object as the first curried function which can configure which sematics of `.ap` to use. Apart from this, it will be possible to add to this config enabling/disabling of "basic type checking" to make sure we have the required methods that make up an "Applicative". This "basic type checking" is on by force in version `^1.0.0` - which could get expensive for large iterables.
+
 ## Install
 
 `npm i @justinc/sequence`
