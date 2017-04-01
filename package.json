@@ -1,0 +1,34 @@
+{
+  "name": "@justinc/sequence",
+  "version": "0.0.1",
+  "description": "Similar to Ramda's sequence (as a micro lib)",
+  "main": "lib/index.js",
+  "scripts": {
+    "lint": "standard lib/** test/** repl.js",
+    "pretest": "npm run lint",
+    "precommit": "npm t",
+    "postcommit": "npm run readme",
+    "prepush": "npm t",
+    "prereadme": "rimraf README.md",
+    "readme": "jsdoc2md --no-cache --template readmeTpl.hbs --files lib/* >> README.md",
+    "test": "ava"
+  },
+  "keywords": [
+    "sequence",
+    "ramda",
+    "applicative",
+    "traversable",
+    "transform"
+  ],
+  "files": [
+    "lib",
+    "README.md"
+  ],
+  "author": "Justin Calleja <calleja.justin@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "ava": "^0.18.2",
+    "folktale": "^2.0.0-alpha3",
+    "standard": "^9.0.2"
+  }
+}
