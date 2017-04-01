@@ -2,7 +2,6 @@ import test from 'ava'
 import sequence from '..'
 import Maybe from 'folktale/data/maybe'
 import Result from 'folktale/data/result'
-import Task from 'folktale/data/task'
 import Validation from 'folktale/data/validation'
 
 const { Just, Nothing } = Maybe
@@ -46,7 +45,7 @@ test('Expect Success([]) when transforming [] with Validation.of', t => {
 test('Works with iterables', t => {
   const expected = Just([100, 200, 300])
   const iterable = {}
-  iterable[Symbol.iterator] = function* () {
+  iterable[Symbol.iterator] = function * () {
     yield Just(100)
     yield Just(200)
     yield Just(300)
