@@ -65,6 +65,6 @@ test('Throws a descriptive Error when a value in given iterable is not an Applic
 test('Throws a descriptive Error when a value in given iterable is not an Applicative', t => {
   t.throws(
     () => sequence(() => 200)([Just(1), Just(2)]),
-    'Make sure that applicativeReturningFn you pass in to sequence returns a value which has .map, .ap, and .of methods as specified in the Fantasy Land spec. This value failed the test: 200'
+    'Make sure that the applicativeReturningFn you pass in to sequence returns a value which has .map, .ap, and .of methods as specified in the Fantasy Land spec. This value failed the test: 200'
   )
 })
