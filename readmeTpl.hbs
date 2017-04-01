@@ -1,0 +1,35 @@
+# `sequence` [![Build status][travis-image]][travis-url] [![NPM version][version-image]][version-url] [![Js Standard Style][standard-image]][standard-url]
+
+This package exports a function similar to [Ramda's sequence](http://ramdajs.com/docs/#sequence) function.
+
+Note that it is strictly curried (see demo usage below).
+
+## Install
+
+`npm i @justinc/sequence`
+
+### Demo
+
+(See tests for more example usage). Also, there's a REPL file you can run with `node repl.js`.
+
+```js
+const Maybe = require('folktale/data/maybe')
+const sequence = require('@justinc/sequence')
+
+const { Just, Nothing } = Maybe
+
+// "strictly curried" means you cannot use short-hands like `sequence(Maybe.of, [Just(1), Just(2), Just(3)])`.
+// That's extra functionality provided by Ramda (not provided here).
+sequence(Maybe.of)([Just(1), Just(2), Just(3)]) // ==> Just([1, 2, 3])
+```
+
+{{>main}}
+
+[travis-image]: https://img.shields.io/travis/justin-calleja/sequence.svg?style=flat-square
+[travis-url]: https://travis-ci.org/justin-calleja/sequence
+
+[version-image]: https://img.shields.io/npm/v/@justinc/sequence.svg?style=flat-square
+[version-url]: https://npmjs.org/package/@justinc/sequence
+
+[standard-image]: https://img.shields.io/badge/code-standard-yellow.svg?style=flat-square
+[standard-url]: https://github.com/feross/standard
