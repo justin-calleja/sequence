@@ -10,6 +10,7 @@
     "postcommit": "npm run readme",
     "prepush": "npm t",
     "prereadme": "rimraf README.md",
+    "postversion": "npm publish --access=public && git push --follow-tags",
     "readme": "jsdoc2md --no-cache --template readmeTpl.hbs --files lib/* >> README.md",
     "test": "ava"
   },
